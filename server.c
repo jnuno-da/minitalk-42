@@ -6,11 +6,17 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:29:11 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:58:26 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/07 18:15:03 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+
+void	handler()
+{
+
+	
+}
 
 int main (void)
 {
