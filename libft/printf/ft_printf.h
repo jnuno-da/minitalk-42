@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 22:29:09 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:46:51 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/11/09 00:20:10 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/11/17 10:42:57 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <signal.h>
-#include "libft.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include "libft/libft.h"
 
-void	signal_deliver(int pid, char *str);
-int	main(int argc, char **argv);
+int	ft_printf(const char *format, ...);
+int	ft_puts(char *str, int fd);
+int	ft_putch(char c, int fd);
+int	ft_pnbr(int n, int fd);
+int	ft_base_hex(unsigned long n, char format);
+int	ft_check_p(unsigned long n);
+int	ft_upnbr(unsigned int n, int fd);
 
 #endif

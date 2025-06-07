@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 22:29:11 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:58:26 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/10/27 11:36:41 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/11/01 00:14:05 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main (void)
+char	*ft_strdup(const char *s)
 {
-	ft_printf("SERVER PID = %d\n", getpid());
+	char	*dup;
+	size_t	size;
 
-	signal(SIGUSR1, handler, true);
-	signal(SIGUSR2, handler, true);
-	while(1)
-	{
-	}
-	return(0);
+	size = ft_strlen(s) + 1;
+	dup = (char *)malloc(size);
+	if (!dup)
+		return (NULL);
+	else
+		ft_memcpy (dup, s, size);
+	return (dup);
 }
+/* #include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char str1[]="456789";
+	
+	char str3[]="456789";
+	
+
+	printf("%s \n",ft_strdup(str1));
+	
+	printf("%s \n", strdup(str3));
+} */

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 22:29:11 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:58:26 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/10/17 22:33:25 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/10/26 02:13:18 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main (void)
+int	ft_tolower(int c)
 {
-	ft_printf("SERVER PID = %d\n", getpid());
-
-	signal(SIGUSR1, handler, true);
-	signal(SIGUSR2, handler, true);
-	while(1)
-	{
-	}
-	return(0);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

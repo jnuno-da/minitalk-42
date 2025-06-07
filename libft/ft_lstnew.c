@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 22:29:11 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:58:26 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/11/01 12:31:52 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/11/01 14:35:57 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main (void)
+t_list	*ft_lstnew(void *content)
 {
-	ft_printf("SERVER PID = %d\n", getpid());
+	t_list	*newelem;
 
-	signal(SIGUSR1, handler, true);
-	signal(SIGUSR2, handler, true);
-	while(1)
-	{
-	}
-	return(0);
+	newelem = malloc(sizeof(t_list));
+	if (!newelem)
+		return (NULL);
+	newelem->content = content;
+	newelem->next = NULL;
+	return (newelem);
 }
+/* int	main()
+{
+	t_list *test;
+	char *a = "cs";
+	
+	test = ft_lstnew((void *)a);
+	printf("%s", (char *)test->content);	
+} */

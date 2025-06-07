@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 22:29:11 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:58:26 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/10/29 22:31:06 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/10/29 22:39:10 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "libft.h"
 
-int main (void)
+void	ft_putstr_fd(char *s, int fd)
 {
-	ft_printf("SERVER PID = %d\n", getpid());
+	int	i;
 
-	signal(SIGUSR1, handler, true);
-	signal(SIGUSR2, handler, true);
-	while(1)
+	i = 0;
+	while (s[i] != '\0')
 	{
+		ft_putchar_fd (s[i], fd);
+		i++;
 	}
-	return(0);
 }
+/* int	main()
+{
+	ft_putstr_fd("a tua prima",0);
+} */

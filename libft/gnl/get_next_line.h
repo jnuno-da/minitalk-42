@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 22:29:11 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:58:26 by jnuno-da         ###   ########.fr       */
+/*   Created: 2024/11/18 22:36:03 by jnuno-da          #+#    #+#             */
+/*   Updated: 2024/12/04 22:49:41 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int main (void)
-{
-	ft_printf("SERVER PID = %d\n", getpid());
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-	signal(SIGUSR1, handler, true);
-	signal(SIGUSR2, handler, true);
-	while(1)
-	{
-	}
-	return(0);
-}
+# include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
+
+char	*get_next_line(int fd);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(char *s);
+void	*ft_calloc(size_t nmemb, size_t size);
+
+#endif
