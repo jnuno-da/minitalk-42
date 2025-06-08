@@ -6,7 +6,7 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:29:09 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/07 16:46:51 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/09 00:38:59 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,5 @@
 
 #include <signal.h>
 #include "libft.h"
-
-void	signal_deliver(int pid, char *str);
-int	main(int argc, char **argv);
 
 #endif

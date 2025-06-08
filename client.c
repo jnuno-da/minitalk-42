@@ -6,7 +6,7 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:29:01 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/08 01:47:37 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/09 00:40:16 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	signal_deliver(int pid, char *str)
 	bit = 0;
 	while(bit < 8)
 	{
-		if (*str & (0b1000000 >> bit))
+		if (*str & (0b1000000 << bit))
 			kill (pid, SIGUSR1);
 		else
 			kill (pid, SIGUSR2);
