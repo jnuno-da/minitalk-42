@@ -6,7 +6,7 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:56:28 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/03/13 19:19:13 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/11 22:47:39 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 //			PRINTF			//
 
-int	ft_printf(const char *format, ...);
-int	ft_puts(char *str, int fd);
-int	ft_putch(char c, int fd);
-int	ft_pnbr(int n, int fd);
-int	ft_base_hex(unsigned long n, char format);
-int	ft_check_p(unsigned long n);
-int	ft_upnbr(unsigned int n, int fd);
-
-//			Get_next_line	//
-
-char	*get_next_line(int fd);
+int		ft_printf(const char *format, ...);
+int		ft_puts(char *str, int fd);
+int		ft_putch(char c, int fd);
+int		ft_pnbr(int n, int fd);
+int		ft_base_hex(unsigned long n, char format);
+int		ft_check_p(unsigned long n);
+int		ft_upnbr(unsigned int n, int fd);
 
 #endif

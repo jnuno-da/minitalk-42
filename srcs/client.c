@@ -6,7 +6,7 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:29:01 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/09 00:40:16 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/11 22:49:22 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,28 @@
 void	signal_deliver(int pid, char *str)
 {
 	int	bit;
+	int	c;
 
 	bit = 0;
-	while(bit < 8)
+	c = 0;
+	while (*str)
 	{
-		if (*str & (0b1000000 << bit))
-			kill (pid, SIGUSR1);
-		else
-			kill (pid, SIGUSR2);
-		usleep(500);
-		bit++;
+		c = *str;
+		bit = 0;
+		while (bit < 8)
+		{
+			if ((c >> (7 - bit)) & 1)
+				kill (pid, SIGUSR1);
+			else
+				kill (pid, SIGUSR2);
+			bit++;
+			usleep(100);
+		}
+		str++;
 	}
 }
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
 
@@ -40,10 +48,10 @@ int	main (int argc, char **argv)
 	}
 	else
 	{
-		while(argv[2][i] != '\0')
+		while (argv[2][i] != '\0')
 		{
-			if(!ft_isprint)
-				return(0);
+			if (!ft_isprint(argv[2][i]))
+				return (0);
 			i++;
 		}
 		signal_deliver(ft_atoi(argv[1]), argv[2]);

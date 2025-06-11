@@ -6,11 +6,11 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:02:09 by jnuno-da          #+#    #+#             */
-/*   Updated: 2024/11/17 21:10:13 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/11 20:43:42 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libft.h"
 
 int	ft_upnbr(unsigned int n, int fd)
 {

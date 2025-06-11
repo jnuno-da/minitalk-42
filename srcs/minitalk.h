@@ -6,14 +6,14 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:29:09 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/09 00:38:59 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/11 22:49:44 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
-#include <signal.h>
-#include "libft.h"
+# include <signal.h>
+# include "../libft/libft.h"
 
 #endif

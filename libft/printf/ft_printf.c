@@ -6,11 +6,11 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 21:06:36 by jnuno-da          #+#    #+#             */
-/*   Updated: 2024/11/17 11:16:31 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/11 20:43:32 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../libft.h"
 
 int	ft_putch(char c, int fd)
 {
