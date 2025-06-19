@@ -6,34 +6,36 @@
 /*   By: jnuno-da <jnuno-da@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 22:29:01 by jnuno-da          #+#    #+#             */
-/*   Updated: 2025/06/11 22:49:22 by jnuno-da         ###   ########.fr       */
+/*   Updated: 2025/06/19 11:05:53 by jnuno-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	signal_deliver(int pid, char *str)
+void	send_char(int pid, char c)
 {
 	int	bit;
-	int	c;
 
 	bit = 0;
-	c = 0;
+	while (bit < 8)
+	{
+		if ((c >> (7 - bit)) & 1)
+			kill (pid, SIGUSR1);
+		else
+			kill (pid, SIGUSR2);
+		bit++;
+		usleep(100);
+	}
+}
+
+void	signal_deliver(int pid, char *str)
+{
 	while (*str)
 	{
-		c = *str;
-		bit = 0;
-		while (bit < 8)
-		{
-			if ((c >> (7 - bit)) & 1)
-				kill (pid, SIGUSR1);
-			else
-				kill (pid, SIGUSR2);
-			bit++;
-			usleep(100);
-		}
+		send_char (pid, *str);
 		str++;
 	}
+	send_char (pid, '\0');
 }
 
 int	main(int argc, char **argv)
